@@ -11,15 +11,22 @@ namespace VærApp
     public partial class SkyWatch : Form
     {
         string apiKey;
+        string directory = Directory.GetCurrentDirectory();
+
         public SkyWatch()
         {
+            string env = @$"C:\Users\{Environment.UserName}\source\repos\VærApp\.env";
             InitializeComponent();
-            Env.Load("C:\\Users\\adnel\\source\\repos\\VærApp\\.env");
+            Env.Load(env);
             apiKey = Environment.GetEnvironmentVariable("api");
+
+            Debug.WriteLine(env);
+            
         }
 
         private void SkyWatch_Load(object sender, EventArgs e)
         {
+            Debug.WriteLine(directory);
         }
 
         private async void HentVær_Click(object sender, EventArgs e)
@@ -39,6 +46,8 @@ namespace VærApp
                         Temp.Text = $"Temperatur: {weatherData.Main.Temp}°C";
                         Vær.Text = $"Vær: {weatherData.Weather[0].description}";
                         VindHas.Text = $"Vindhastighet: {weatherData.Wind.speed} m/s";
+                        Humidity.Text = $"Luftfuktighet: {weatherData.Main.Humidity}%";
+                        Lufttrykk.Text = $"Lufttrykk: {weatherData.Main.pressure} hPa";
                     }
                     else
                     {
@@ -50,6 +59,29 @@ namespace VærApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Temp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ByHenter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ByHenter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                HentVær_Click(sender, e);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -63,12 +95,21 @@ namespace VærApp
 
         [JsonPropertyName("wind")]
         public Wind Wind { get; set; }
+        
     }
+        
+    
 
     public class MainInfo
     {
         [JsonPropertyName("temp")]
-        public float Temp { get; set; }
+        public double Temp { get; set; }
+
+        [JsonPropertyName("humidity")]
+        public int Humidity { get; set; }
+
+        [JsonPropertyName("pressure")]
+        public int pressure { get; set; }
     }
 
     public class WeatherCondition
@@ -83,6 +124,7 @@ namespace VærApp
         public float speed { get; set; }
 
     }
+    
 }
         
     

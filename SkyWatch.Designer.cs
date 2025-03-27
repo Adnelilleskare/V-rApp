@@ -36,23 +36,32 @@
             Temp = new Label();
             Vær = new Label();
             VindHas = new Label();
+            Humidity = new Label();
+            Lufttrykk = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // ByHenter
             // 
-            ByHenter.Location = new Point(296, 9);
+            ByHenter.Location = new Point(338, 11);
             ByHenter.Margin = new Padding(3, 2, 3, 2);
             ByHenter.Name = "ByHenter";
-            ByHenter.Size = new Size(134, 23);
+            ByHenter.Size = new Size(120, 23);
             ByHenter.TabIndex = 0;
             ByHenter.Text = "Skriv inn din by her:";
+            ByHenter.TextChanged += ByHenter_TextChanged;
+            ByHenter.KeyDown += ByHenter_KeyDown;
             // 
             // HentVær
             // 
-            HentVær.Location = new Point(453, 8);
+            HentVær.Anchor = AnchorStyles.None;
+            HentVær.Location = new Point(494, 10);
             HentVær.Margin = new Padding(3, 2, 3, 2);
             HentVær.Name = "HentVær";
-            HentVær.Size = new Size(82, 22);
+            HentVær.Size = new Size(75, 23);
             HentVær.TabIndex = 1;
             HentVær.Text = "Hent vær";
             HentVær.UseVisualStyleBackColor = true;
@@ -60,62 +69,121 @@
             // 
             // Langtidsvarsel
             // 
-            Langtidsvarsel.Location = new Point(673, 350);
+            Langtidsvarsel.Anchor = AnchorStyles.None;
+            Langtidsvarsel.Location = new Point(752, 488);
             Langtidsvarsel.Name = "Langtidsvarsel";
-            Langtidsvarsel.Size = new Size(95, 23);
+            Langtidsvarsel.Size = new Size(180, 23);
             Langtidsvarsel.TabIndex = 2;
-            Langtidsvarsel.Text = "Langtidsvarsel";
+            Langtidsvarsel.Text = "Været etter i dag";
             Langtidsvarsel.UseVisualStyleBackColor = true;
             // 
             // IdagVær
             // 
-            IdagVær.Location = new Point(673, 299);
+            IdagVær.Anchor = AnchorStyles.None;
+            IdagVær.Location = new Point(752, 459);
             IdagVær.Name = "IdagVær";
-            IdagVær.Size = new Size(95, 23);
+            IdagVær.Size = new Size(180, 23);
             IdagVær.TabIndex = 3;
-            IdagVær.Text = "Været i dag";
+            IdagVær.Text = "Været senere i dag";
             IdagVær.UseVisualStyleBackColor = true;
             // 
             // Temp
             // 
+            Temp.Anchor = AnchorStyles.None;
             Temp.AutoSize = true;
+            Temp.BackColor = Color.Transparent;
             Temp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Temp.ForeColor = SystemColors.ButtonHighlight;
-            Temp.Location = new Point(296, 60);
+            Temp.Location = new Point(338, 82);
             Temp.Name = "Temp";
-            Temp.Size = new Size(38, 21);
+            Temp.Size = new Size(0, 21);
             Temp.TabIndex = 4;
-            Temp.Text = "erer";
+            Temp.Click += Temp_Click;
             // 
             // Vær
             // 
+            Vær.Anchor = AnchorStyles.None;
             Vær.AutoSize = true;
+            Vær.BackColor = Color.Transparent;
             Vær.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Vær.ForeColor = SystemColors.ButtonHighlight;
-            Vær.Location = new Point(296, 81);
+            Vær.Location = new Point(338, 106);
             Vær.Name = "Vær";
-            Vær.Size = new Size(38, 21);
+            Vær.Size = new Size(0, 21);
             Vær.TabIndex = 5;
-            Vær.Text = "erer";
             // 
             // VindHas
             // 
+            VindHas.Anchor = AnchorStyles.None;
             VindHas.AutoSize = true;
+            VindHas.BackColor = Color.Transparent;
             VindHas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             VindHas.ForeColor = SystemColors.ButtonHighlight;
-            VindHas.Location = new Point(296, 102);
+            VindHas.Location = new Point(338, 127);
             VindHas.Name = "VindHas";
-            VindHas.Size = new Size(38, 21);
+            VindHas.Size = new Size(0, 21);
             VindHas.TabIndex = 6;
-            VindHas.Text = "erer";
+            // 
+            // Humidity
+            // 
+            Humidity.Anchor = AnchorStyles.None;
+            Humidity.AutoSize = true;
+            Humidity.BackColor = Color.Transparent;
+            Humidity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Humidity.ForeColor = SystemColors.ButtonHighlight;
+            Humidity.Location = new Point(338, 148);
+            Humidity.Name = "Humidity";
+            Humidity.Size = new Size(0, 21);
+            Humidity.TabIndex = 7;
+            // 
+            // Lufttrykk
+            // 
+            Lufttrykk.Anchor = AnchorStyles.None;
+            Lufttrykk.AutoSize = true;
+            Lufttrykk.BackColor = Color.Transparent;
+            Lufttrykk.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Lufttrykk.ForeColor = SystemColors.ButtonHighlight;
+            Lufttrykk.Location = new Point(338, 169);
+            Lufttrykk.Name = "Lufttrykk";
+            Lufttrykk.Size = new Size(0, 21);
+            Lufttrykk.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-101, 205);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(600, 337);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(294, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(131, 21);
+            label1.TabIndex = 10;
+            label1.Text = "Været akkurat nå:";
+            label1.Click += label1_Click;
             // 
             // SkyWatch
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.SkyBlue;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(780, 385);
+            ClientSize = new Size(944, 510);
+            Controls.Add(label1);
+            Controls.Add(Lufttrykk);
+            Controls.Add(Humidity);
             Controls.Add(VindHas);
             Controls.Add(Vær);
             Controls.Add(Temp);
@@ -123,11 +191,13 @@
             Controls.Add(Langtidsvarsel);
             Controls.Add(HentVær);
             Controls.Add(ByHenter);
+            Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "SkyWatch";
             Text = "SkyWatch";
             Load += SkyWatch_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -141,5 +211,10 @@
         private Label Temp;
         private Label Vær;
         private Label VindHas;
+        private Label Humidity;
+        private Label Lufttrykk;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }
