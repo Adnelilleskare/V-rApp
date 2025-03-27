@@ -14,8 +14,8 @@ namespace VærApp
         string directory = Directory.GetCurrentDirectory();
 
         public SkyWatch()
-        {
-            string env = @$"C:\Users\{Environment.UserName}\source\repos\VærApp\.env";
+        { 
+            string env = @$"C:\Users\{Environment.UserName}\source\repos\V-rApp\.env";
             InitializeComponent();
             Env.Load(env);
             apiKey = Environment.GetEnvironmentVariable("api");
@@ -48,6 +48,7 @@ namespace VærApp
                         VindHas.Text = $"Vindhastighet: {weatherData.Wind.speed} m/s";
                         Humidity.Text = $"Luftfuktighet: {weatherData.Main.Humidity}%";
                         Lufttrykk.Text = $"Lufttrykk: {weatherData.Main.pressure} hPa";
+                       
                     }
                     else
                     {

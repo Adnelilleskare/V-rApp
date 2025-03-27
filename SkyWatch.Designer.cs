@@ -46,6 +46,7 @@
             // 
             // ByHenter
             // 
+            ByHenter.Anchor = AnchorStyles.None;
             ByHenter.Location = new Point(338, 11);
             ByHenter.Margin = new Padding(3, 2, 3, 2);
             ByHenter.Name = "ByHenter";
