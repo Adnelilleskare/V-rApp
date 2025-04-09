@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -10,11 +12,9 @@ namespace VærApp
 {
     public partial class SkyWatch : Form
     {
-        string apiKey;
-        string directory = Directory.GetCurrentDirectory();
-        private static LangtidsvarselVindu langtidsvarsel = new LangtidsvarselVindu();
-        public string By { get; set ; }
-        
+        string? apiKey;
+        public string? By { get; set; }
+
 
         public SkyWatch()
         {
@@ -24,13 +24,6 @@ namespace VærApp
             apiKey = Environment.GetEnvironmentVariable("api");
 
             Debug.WriteLine(env);
-
-
-        }
-
-        public void SkyWatch_Load(object sender, EventArgs e)
-        {
-            Debug.WriteLine(directory);
         }
 
         public async void HentVær_Click(object sender, EventArgs e)
@@ -53,7 +46,6 @@ namespace VærApp
                         VindHas.Text = $"Vindhastighet: {weatherData.Wind.speed} m/s";
                         Humidity.Text = $"Luftfuktighet: {weatherData.Main.Humidity}%";
                         Lufttrykk.Text = $"Lufttrykk: {weatherData.Main.pressure} hPa";
-                       
                     }
                     else
                     {
@@ -67,16 +59,6 @@ namespace VærApp
             }
         }
 
-        public void Temp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void ByHenter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void ByHenter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -85,26 +67,23 @@ namespace VærApp
             }
         }
 
-        public void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void Langtidsvarsel_Click(object sender, EventArgs e)
         {
             try
             {
                 By = ByHenter.Text;
-                langtidsvarsel = new LangtidsvarselVindu();
+                var langtidsvarsel = new LangtidsvarselVindu();
                 langtidsvarsel.SetBy(By);
                 langtidsvarsel.Show();
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void SkyWatch_Load(object sender, EventArgs e)
+        {
 
         }
     }
@@ -112,17 +91,14 @@ namespace VærApp
     public class WeatherResponse
     {
         [JsonPropertyName("main")]
-        public MainInfo Main { get; set; }
+        public MainInfo? Main { get; set; }
 
         [JsonPropertyName("weather")]
         public List<WeatherCondition> Weather { get; set; }
 
         [JsonPropertyName("wind")]
         public Wind Wind { get; set; }
-        
     }
-        
-    
 
     public class MainInfo
     {
@@ -139,16 +115,12 @@ namespace VærApp
     public class WeatherCondition
     {
         [JsonPropertyName("main")]
-        public string description { get; set; }
+        public string? description { get; set; }
     }
 
     public class Wind
     {
         [JsonPropertyName("speed")]
         public float speed { get; set; }
-
     }
-    
 }
-        
-    

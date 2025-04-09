@@ -47,12 +47,11 @@
             // 
             ByHenter.Anchor = AnchorStyles.None;
             ByHenter.Location = new Point(432, 37);
-            ByHenter.Margin = new Padding(2, 2, 2, 2);
+            ByHenter.Margin = new Padding(2);
             ByHenter.Name = "ByHenter";
             ByHenter.Size = new Size(120, 23);
             ByHenter.TabIndex = 0;
             ByHenter.Text = "Skriv inn din by her:";
-            ByHenter.TextChanged += ByHenter_TextChanged;
             ByHenter.KeyDown += ByHenter_KeyDown;
             // 
             // HentVær
@@ -89,7 +88,6 @@
             Temp.Name = "Temp";
             Temp.Size = new Size(0, 21);
             Temp.TabIndex = 4;
-            Temp.Click += Temp_Click;
             // 
             // Vær
             // 
@@ -163,7 +161,6 @@
             label1.Size = new Size(131, 21);
             label1.TabIndex = 10;
             label1.Text = "Været akkurat nå:";
-            label1.Click += label1_Click;
             // 
             // SkyWatch
             // 

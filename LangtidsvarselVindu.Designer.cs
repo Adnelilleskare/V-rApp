@@ -59,7 +59,6 @@
             ByTekst.Size = new Size(165, 30);
             ByTekst.TabIndex = 1;
             ByTekst.Text = "Langtidsvarsel i:";
-            ByTekst.Click += label1_Click;
             // 
             // Idag
             // 
