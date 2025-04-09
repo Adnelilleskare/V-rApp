@@ -42,7 +42,8 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-93, 276);
+            pictureBox1.Location = new Point(-81, 207);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(600, 337);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -53,9 +54,9 @@
             // 
             ByTekst.AutoSize = true;
             ByTekst.Font = new Font("Segoe UI", 16F);
-            ByTekst.Location = new Point(301, 9);
+            ByTekst.Location = new Point(263, 7);
             ByTekst.Name = "ByTekst";
-            ByTekst.Size = new Size(206, 37);
+            ByTekst.Size = new Size(165, 30);
             ByTekst.TabIndex = 1;
             ByTekst.Text = "Langtidsvarsel i:";
             ByTekst.Click += label1_Click;
@@ -64,9 +65,9 @@
             // 
             Idag.AutoSize = true;
             Idag.Font = new Font("Segoe UI", 12F);
-            Idag.Location = new Point(457, 77);
+            Idag.Location = new Point(400, 58);
             Idag.Name = "Idag";
-            Idag.Size = new Size(60, 28);
+            Idag.Size = new Size(47, 21);
             Idag.TabIndex = 2;
             Idag.Text = "Idag: ";
             // 
@@ -74,9 +75,9 @@
             // 
             Imorgen.AutoSize = true;
             Imorgen.Font = new Font("Segoe UI", 12F);
-            Imorgen.Location = new Point(457, 116);
+            Imorgen.Location = new Point(400, 87);
             Imorgen.Name = "Imorgen";
-            Imorgen.Size = new Size(95, 28);
+            Imorgen.Size = new Size(76, 21);
             Imorgen.TabIndex = 3;
             Imorgen.Text = "Imorgen: ";
             // 
@@ -84,9 +85,9 @@
             // 
             Dag4.AutoSize = true;
             Dag4.Font = new Font("Segoe UI", 12F);
-            Dag4.Location = new Point(457, 197);
+            Dag4.Location = new Point(400, 148);
             Dag4.Name = "Dag4";
-            Dag4.Size = new Size(68, 28);
+            Dag4.Size = new Size(54, 21);
             Dag4.TabIndex = 5;
             Dag4.Text = "Dag 4:";
             // 
@@ -94,9 +95,9 @@
             // 
             Dag3.AutoSize = true;
             Dag3.Font = new Font("Segoe UI", 12F);
-            Dag3.Location = new Point(457, 158);
+            Dag3.Location = new Point(400, 118);
             Dag3.Name = "Dag3";
-            Dag3.Size = new Size(68, 28);
+            Dag3.Size = new Size(54, 21);
             Dag3.TabIndex = 4;
             Dag3.Text = "Dag 3:";
             // 
@@ -104,18 +105,18 @@
             // 
             Dag5.AutoSize = true;
             Dag5.Font = new Font("Segoe UI", 12F);
-            Dag5.Location = new Point(457, 236);
+            Dag5.Location = new Point(400, 177);
             Dag5.Name = "Dag5";
-            Dag5.Size = new Size(68, 28);
+            Dag5.Size = new Size(54, 21);
             Dag5.TabIndex = 6;
             Dag5.Text = "Dag 5:";
             // 
             // LangtidsvarselVindu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            ClientSize = new Size(1141, 590);
+            ClientSize = new Size(1388, 472);
             Controls.Add(Dag5);
             Controls.Add(Dag4);
             Controls.Add(Dag3);
@@ -123,6 +124,9 @@
             Controls.Add(Idag);
             Controls.Add(ByTekst);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(1404, 511);
+            MinimumSize = new Size(1014, 481);
             Name = "LangtidsvarselVindu";
             Text = "Langtidsvarsel";
             Load += LangtidsvarselVindu_Load;

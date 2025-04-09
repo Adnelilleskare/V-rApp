@@ -23,13 +23,17 @@ namespace VærApp
 
         public LangtidsvarselVindu()
         {
-            string env = @$"C:\Users\{Environment.UserName}\source\repos\VærApp\.env";
+            string env = @$"C:\Users\{Environment.UserName}\source\repos\V-rApp\.env";
             InitializeComponent();
             Env.Load(env);
             apiKey = Environment.GetEnvironmentVariable("api");
 
             Debug.WriteLine(env);
         }
+
+      
+
+
 
         public void SetBy(string by)
         {

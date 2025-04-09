@@ -46,10 +46,10 @@
             // ByHenter
             // 
             ByHenter.Anchor = AnchorStyles.None;
-            ByHenter.Location = new Point(338, 11);
-            ByHenter.Margin = new Padding(3, 2, 3, 2);
+            ByHenter.Location = new Point(432, 37);
+            ByHenter.Margin = new Padding(2, 2, 2, 2);
             ByHenter.Name = "ByHenter";
-            ByHenter.Size = new Size(149, 27);
+            ByHenter.Size = new Size(120, 23);
             ByHenter.TabIndex = 0;
             ByHenter.Text = "Skriv inn din by her:";
             ByHenter.TextChanged += ByHenter_TextChanged;
@@ -58,10 +58,10 @@
             // HentVær
             // 
             HentVær.Anchor = AnchorStyles.None;
-            HentVær.Location = new Point(618, 12);
-            HentVær.Margin = new Padding(4, 2, 4, 2);
+            HentVær.Location = new Point(656, 38);
+            HentVær.Margin = new Padding(3, 2, 3, 2);
             HentVær.Name = "HentVær";
-            HentVær.Size = new Size(94, 29);
+            HentVær.Size = new Size(75, 23);
             HentVær.TabIndex = 1;
             HentVær.Text = "Hent vær";
             HentVær.UseVisualStyleBackColor = true;
@@ -70,10 +70,9 @@
             // Langtidsvarsel
             // 
             Langtidsvarsel.Anchor = AnchorStyles.None;
-            Langtidsvarsel.Location = new Point(798, 14);
-            Langtidsvarsel.Margin = new Padding(4);
+            Langtidsvarsel.Location = new Point(800, 39);
             Langtidsvarsel.Name = "Langtidsvarsel";
-            Langtidsvarsel.Size = new Size(129, 29);
+            Langtidsvarsel.Size = new Size(103, 23);
             Langtidsvarsel.TabIndex = 2;
             Langtidsvarsel.Text = "Langtidsvarsel";
             Langtidsvarsel.UseVisualStyleBackColor = true;
@@ -86,10 +85,9 @@
             Temp.BackColor = Color.Transparent;
             Temp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Temp.ForeColor = SystemColors.ButtonHighlight;
-            Temp.Location = new Point(422, 102);
-            Temp.Margin = new Padding(4, 0, 4, 0);
+            Temp.Location = new Point(500, 110);
             Temp.Name = "Temp";
-            Temp.Size = new Size(0, 28);
+            Temp.Size = new Size(0, 21);
             Temp.TabIndex = 4;
             Temp.Click += Temp_Click;
             // 
@@ -100,10 +98,9 @@
             Vær.BackColor = Color.Transparent;
             Vær.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Vær.ForeColor = SystemColors.ButtonHighlight;
-            Vær.Location = new Point(422, 132);
-            Vær.Margin = new Padding(4, 0, 4, 0);
+            Vær.Location = new Point(500, 134);
             Vær.Name = "Vær";
-            Vær.Size = new Size(0, 28);
+            Vær.Size = new Size(0, 21);
             Vær.TabIndex = 5;
             // 
             // VindHas
@@ -113,10 +110,9 @@
             VindHas.BackColor = Color.Transparent;
             VindHas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             VindHas.ForeColor = SystemColors.ButtonHighlight;
-            VindHas.Location = new Point(422, 159);
-            VindHas.Margin = new Padding(4, 0, 4, 0);
+            VindHas.Location = new Point(500, 155);
             VindHas.Name = "VindHas";
-            VindHas.Size = new Size(0, 28);
+            VindHas.Size = new Size(0, 21);
             VindHas.TabIndex = 6;
             // 
             // Humidity
@@ -126,10 +122,9 @@
             Humidity.BackColor = Color.Transparent;
             Humidity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Humidity.ForeColor = SystemColors.ButtonHighlight;
-            Humidity.Location = new Point(422, 185);
-            Humidity.Margin = new Padding(4, 0, 4, 0);
+            Humidity.Location = new Point(500, 176);
             Humidity.Name = "Humidity";
-            Humidity.Size = new Size(0, 28);
+            Humidity.Size = new Size(0, 21);
             Humidity.TabIndex = 7;
             // 
             // Lufttrykk
@@ -139,10 +134,9 @@
             Lufttrykk.BackColor = Color.Transparent;
             Lufttrykk.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Lufttrykk.ForeColor = SystemColors.ButtonHighlight;
-            Lufttrykk.Location = new Point(422, 211);
-            Lufttrykk.Margin = new Padding(4, 0, 4, 0);
+            Lufttrykk.Location = new Point(500, 197);
             Lufttrykk.Name = "Lufttrykk";
-            Lufttrykk.Size = new Size(0, 28);
+            Lufttrykk.Size = new Size(0, 21);
             Lufttrykk.TabIndex = 8;
             // 
             // pictureBox1
@@ -150,8 +144,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-126, 256);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(61, 233);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(600, 337);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -165,21 +158,20 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(368, 65);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(456, 80);
             label1.Name = "label1";
-            label1.Size = new Size(164, 28);
+            label1.Size = new Size(131, 21);
             label1.TabIndex = 10;
             label1.Text = "Været akkurat nå:";
             label1.Click += label1_Click;
             // 
             // SkyWatch
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.SkyBlue;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1180, 638);
+            ClientSize = new Size(1268, 567);
             Controls.Add(label1);
             Controls.Add(Lufttrykk);
             Controls.Add(Humidity);
@@ -191,7 +183,9 @@
             Controls.Add(ByHenter);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 2, 4, 2);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(1284, 685);
+            MinimumSize = new Size(773, 559);
             Name = "SkyWatch";
             Text = "SkyWatch";
             Load += SkyWatch_Load;
